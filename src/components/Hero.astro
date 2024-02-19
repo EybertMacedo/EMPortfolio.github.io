@@ -1,0 +1,37 @@
+---
+import heroImage from '../assets/images/hero.png';
+import { Image } from 'astro:assets';
+import Button from '../components/ui/Button.astro';
+import Social from './ui/Social.astro';
+---
+
+<section
+	data-testid="hero"
+	class="flex h-screen flex-col-reverse items-center justify-center text-center lg:flex-row"
+>
+	<div class="mb-10 flex flex-col items-center lg:mb-0 lg:w-1/2">
+		<div>
+			<h1 class="mb-5 font-monospace text-3xl text-black dark:text-white lg:text-5xl">
+				Hi! My name is <span class="text-celeste">Eybert Macedo</span> and I am a Software Engineer from Perú!.
+			</h1>
+		</div>
+		<hr class="w-1/2" />
+		<div class="flex mb-5 items-center justify-center lg:gap-20">			
+			<Social />
+		</div>
+		
+		<div class="mb-10">
+			<Button onclick="location.href='#projects'" style={'primary'} size={'lg'} class={'flex'} name="learn more">Learn more</Button>
+		</div>
+	</div>
+	<div data-testid="hero-img" class="mb-10 flex w-1/2 items-center justify-center">
+		<Image
+			src={heroImage}
+			alt="Coding boy"
+			format="png"
+			width={600}
+			height={600}
+			loading="eager"
+		/>
+	</div>
+</section>
